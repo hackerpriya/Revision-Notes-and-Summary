@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revision Notes & Summary</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #navbar{
+            display: flex;
+            justify-content: flex-start;
+            flex: 1;
+            column-gap: 30%;
+            background-color: #A91D3A;
+            color: white;
+            padding: 1%;
+            /* gap: 30%; */
+        }
+        #logo{
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%; 
+            
+        }
+        #logo #logo-link{
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 100%;
+        }
+
+
+        #nav-links{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex: 1; */
+        }
+        #nav-links a{
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+        }
+        #nav-links>button{
+            width: 200px;
+            border: none;
+            border-radius: 20px;
+            background-color: black;
+            padding: 10px;
+            margin: 2.5%;
+        }
+
+        #nav-links>button:hover{
+            background-color: #C73659;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <h1><a href="revision_notes.html" id="logo-link">Revision Notes</a></h1>
+        </div>
+        <div id="nav-links">
+            <button><a href="">Webpage</a></button>
+            <button><a href="HTML5\html5.html" target="_blank">HTML5</a></button>
+            <button><a href="CSS3/css3.html">CSS3</a></button>
+            <button><a href="JavaScript/javascript.html">JavaScript</a></button>
+            <button><a href="ReactJs/react.html">ReactJS</a></button>
+            <button><a href="Python/python.html">Python</a></button>
+
+        </div>
+
+    </nav>
+</body>
+</html>
