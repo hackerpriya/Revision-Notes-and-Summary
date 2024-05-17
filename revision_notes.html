@@ -47,7 +47,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* flex: 1; */
+            flex: 1;
         }
         #nav-links a{
             text-decoration: none;
@@ -55,19 +55,40 @@
             font-weight: bolder;
         }
         #nav-links>button{
-            width: 200px;
+            /* width: 104px; */
+            width: 9em;
             border: none;
             border-radius: 20px;
             /* background-color: #0E46A3; */
             background-color: #1E0342;
 
             padding: 10px;
-            margin: 2.5%;
+            margin: 1%;
         }
 
         #nav-links>button:hover{
             background-color: #C73659;
         }
+        
+
+        #code1{
+            /* height:  200px; */
+            /* width: min-content; */
+            display: flex;
+            justify-content: center;
+
+            margin: 2%;
+            padding: 1%;
+        }
+        #code1>pre{
+            background-color: rgb(211, 199, 199);
+            border-radius: 2%;
+            overflow-wrap: break-word;
+
+
+        }
+
+
         @media(max-width:1230px) {
             #navbar{
                 display: flex;
@@ -103,9 +124,85 @@
             <button><a href="ReactJs/react.html">ReactJS</a></button>
             <button><a href="Python/python.html">Python</a></button>
             <button><a href="">Django</a></button>
-
         </div>
 
+
+
     </nav>
+    <!-- <iframe src="" frameborder="0"></iframe> -->
+    <div id="code1">
+        <pre>
+            // Array to store books in the library
+    let library = [];
+    
+    // Function to add a new book to the library
+    function addBook(title, author, isbn) {
+    const newBook = {
+        title: title,
+        author: author,
+        isbn: isbn,
+        status: "Available"
+    };
+    library.push(newBook);
+    console.log(`Added book: ${title} by ${author} (ISBN: ${isbn})`);
+    }
+    
+    // Function to display all available books in the library
+    function displayBooks() {
+    console.log("Display Available Books:");
+    library.forEach(book => {
+        if (book.status === "Available") {
+            console.log(`${book.title} by ${book.author} (ISBN: ${book.isbn})`);
+        }
+    });
+    }
+    
+    // Function to find a book by ISBN
+    function findBookByISBN(isbn) {
+    return library.findIndex(book => book.isbn === isbn);
+    }
+    
+    // Function to borrow a book from the library
+    function borrowBook(isbn) {
+    const index = findBookByISBN(isbn);
+    if (index !== -1) {
+        if (library[index].status === "Available") {
+            library[index].status = "Borrowed";
+            console.log(`Book with ISBN ${isbn} has been borrowed.`);
+        } else {
+            console.log(`Book with ISBN ${isbn} is not available for borrowing.`);
+        }
+    } else {
+        console.log(`Book with ISBN ${isbn} does not exist in the library.`);
+    }
+    }
+    
+    // Function to return a borrowed book to the library
+    function returnBook(isbn) {
+    const index = findBookByISBN(isbn);
+    if (index !== -1) {
+        if (library[index].status === "Borrowed") {
+            library[index].status = "Available";
+            console.log(`Book with ISBN ${isbn} has been returned.`);
+        } else {
+            console.log(`Book with ISBN ${isbn} is not borrowed.`);
+        }
+    } else {
+        console.log(`Book with ISBN ${isbn} does not exist in the library.`);
+    }
+    }
+    
+    // Test the functions with example input
+    addBook("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565");
+    addBook("To Kill a Mockingbird", "Harper Lee", "9780061120084");
+    displayBooks();
+    borrowBook("9780743273565");
+    displayBooks();
+    returnBook("9780743273565");
+    displayBooks();
+        </pre>
+
+    </div>
+    
 </body>
 </html>
