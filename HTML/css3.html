@@ -27,13 +27,375 @@
 
 
     </nav>
-    <div id="Introduction">
-        <div class="top-heading">
-            <h1>Hello I'm CSS3</h1>
+    <div id="main">
+        <div class="heading">CSS Grid Notes</div>
+        <div class="introduction">
+            <div class="titles">
+                <h1>Display Grid</h1>
+                <h2>Introduction</h2>
+            </div>
+            <ol>
+                <li>CSS tool that let us create two dimensional layouts.</li>
+                <li>Flexbox can have a horizontal row based flexbox system with multiple divs inside where we can define their width and also their alignment.<br>
+                    <img src="assets/css-images/1.png" alt=""></li>
+                <li>This kind of complex layout can be created by using grid. <br><img src="assets/css-images/2.png" alt=""></li>
+                <li>Swiss website where they've got the weather forecast for bern which is created by using grid and layout can be divided for different sections which would be very hard to create by using flexbox or floats.<br><img src="assets/css-images/3.png" alt=""></li>
+                
+            </ol>
         </div>
-
-    </div>
     
+        <hr>
+    
+        <div class="difference">
+            <h1><a href="https://appbrewery.github.io/grid-vs-flexbox/" target="_blank">Difference between Flexbox and Grid</a></h1>
+            <table>
+                    <tr>
+                        <th  class="colh">S.No</th>
+                        <th class="col1">Flexbox</th>
+                        <th class="col2">Grid</th>
+                    </tr>
+                    <tr>
+                        <th class="colh">1.</th>
+                        <td class="col1">Align content along a one dimensional line.<br>
+                        <img src="assets/css-images/4.png" alt=""></td>
+                        <td class="col2">Grid is as tool for laying out content along two dimensional grid.
+                            <ul type="disc">
+                                <li>Navbar over right</li>
+                                <li>main content</li>
+                                <li>footer on the bottom</li>
+                            </ul>
+                            <br>
+                            <img src="assets/css-images/5.png" alt="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="colh">2.</th>
+                        <td class="col1">Good for one dimensional alignment.</td>
+                        <td class="col2">Good for 2D layouts where we have almost table like structure with columns and rows.</td>
+    
+                    </tr>
+                    <tr>
+                        <th class="colh">3.</th>
+                        <td class="col1">Within the grid one of the containers can be laid as flexbox. 
+                            <ul>
+                                <li>Flexbox can be inside grid.
+                                    <br><img src="assets/css-images/7.png" alt="">
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="col2">We've got grid style 2D layout. <br>
+                            <ul>
+                              <li>Grid can be inside flexbox.</li>
+                            </ul>
+                            <img src="assets/css-images/6.png" alt="">
+                        </td>
+                        
+    
+                    </tr>
+                    <tr>
+                        <th class="colh">4.</th>
+                        <td class="col1">
+                            It's very difficult to get flexbox items to line up with each other like in grid.
+                            Because it's flexible and it tries to adapt and squish the content so that everything gets placed on the screen.
+                            <ul>
+                                <li>While expanding, may be some items will line up with each other but it's not perfect alignment.</li>
+                                <li>It prioritize spacing out content and aligning content.</li>
+                            </ul>
+                        </td>
+                        <td class="col2">Natural inclination is to create grid and everything lines up with each other on column and row basis.
+                            <ul>
+                                <li>Gaps between all the items match up with each other and completely straight alon grid.</li>
+                                <li>Everything becomes boxy like grid/table.</li>
+                            </ul>
+                        </td>
+    
+                    </tr>
+    
+            </table>
+        </div>
+    
+        <hr>
+    
+        <div class="create-grid">
+            <h1>Create Grid</h1>
+            <ol>
+                <li>Four paragraphs are grid items</li>
+                <li>Container is going to be grid <br><img src="assets/css-images/8.png" alt=""></li>
+                <li>Target container using container class and then set the display to grid <br><img src="assets/css-images/9.png" alt=""></li>
+                <li><strong>grid-template-columns</strong> is creating column of fractional ratio of 1 to 2.
+                    <ul type="disc">
+                        <li>If first column had width of 1 then second column is going to be twice the width of first column <br>
+                            <img src="assets/css-images/10.png" alt="">
+                        </li>
+                        <li>The default behavior for a grid container is to try and take up the full width but only have as much height as it allows to fit the content so we don't have to change the height.</li>
+                    </ul>
+                </li>
+                <li><strong>grid-template-rows</strong> is creating rows of fractional ratio of 1 to 1.
+                    <ul type="disc">
+                        <li>We get rows of equal heights <br><img src="assets/css-images/11.png" alt=""></li>
+                    </ul>
+                </li>
+                <li><strong>gap</strong> gives distance of 10px between columns and rows.
+                    <ul type="disc">
+                        <li>Allows paragraphs to separate from each other without any sort of margin or padding.</li>
+                    </ul>
+                </li>
+            </ol>
+    
+        </div>
+    
+        <hr>
+    
+        <div class="Exercise-1">
+            <h1>Exercise-1 : Create Chessboard
+                <br>
+                <iframe id="chessboard" src="assets/css-exercises/exercise1.html" frameborder="0" height="800px" width="800px"></iframe>
+            </h1>
+    
+        </div>
+    
+        <hr>
+    
+        <div class="heading">Grid Sizing</div>
+        <div class="grid-sizing">
+            <div class="titles">
+                <h1>Fixed Size Grid : Non-Responsive</h1>
+            </div>
+            <ol>
+                <li>Fixed sized columns and rows are not responsive 
+                <ul type="disc">
+                    <li>pixels<br><img src="assets/css-images/12.png" alt=""><br><img src="assets/css-images/13.png" alt=""></li></li>
+                    <li>rem : this is still going to be fixed because it is relative to root of HTML</li>
+                </ul>
+                <li>We can combine grid-template-columns and grid-template-rows into one property, which is just called grid template</li>
+                <ul>
+                    <li>Define rows first and then add a forward slash(/) and then define columns <br><img src="assets/css-images/14.png" alt=""></li>
+                    <li>To define a lot of grids we use this shorthand.</li>
+                </ul>
+            </ol>
+        </div>
+        <hr>
+
+        <div class="grid-sizing">
+            <div class="titles">
+                <h1>Auto Size Grid : Responsive</h1>
+            </div>
+            <ol>
+                <li><strong>auto</strong> keyword to define grid</li>
+                <ul>
+                    <li>It is going to give us a little bit of responsiveness.</li>
+                    <li>Each row is going to try and fit to 100% of the horizontal available space.</li>
+                    <li><strong>100% Width : </strong>The second columns is going to be as wide as it needs to in order to take up 100% of the width. <br><img src="assets/css-images/15.png" alt=""></li>
+                    <li><strong>Fit Content : </strong>In case of row auto keyword is not going to behave the same way as columns and instead of this it tries to fit to the content.</li>
+                </ul>
+                <li><a href="https://appbrewery.github.io/grid-sizing/">Grid Sizing Demo</a></li>
+                <embed src="https://appbrewery.github.io/grid-sizing/" type="">
+            </ol>
+        </div>
+        <hr>
+
+        <div class="grid-sizing">
+            <div class="titles">
+                <h1>Fractional Size Grid</h1>
+            </div>
+            <ol>
+                <li>Defines different areas of layout with ratios for sizes.</li>
+                <li>First row is going to be half of the second row.</li>
+                <li>First column is going to be half of the second column.<br><img src="assets/css-images/16.png" alt=""></li>
+                <li><strong>fr : </strong>Fractional unit which defines ratios.</li>
+                <ul>
+                    <li>It's going to shrink and grow depeneding on the width available for the horizontal and also the content size of the vertical.</li>
+                </ul>
+            </ol>
+        </div>
+        <hr>
+
+        <div class="grid-sizing">
+            <div class="titles">
+                <h1>MinMax Size Grid</h1>
+            </div>
+            <ol>
+                <li><strong>minmax() function : </strong>Define grid responsive horizontally.</li>
+                <li>Limits column inside grid. <br><img src="assets/css-images/17.png" alt=""></li>
+                <li><strong>repeat( ) function</strong><br><img src="assets/css-images/18.png" alt=""></li>
+                <li>What if a grid is larger than we have items for?</li>
+                <ul>
+                    <li> <br> <img src="assets/css-images/19.png" alt=""> </li>
+                    <li> <br> <img src="assets/css-images/20.png" alt=""></li>
+                </ul>
+                <li>What if we don't define enough rows and columns in grid-template as it is defined in container?<br><img src="assets/css-images/21.png" alt=""></li>
+                <ul>
+                    <li>The div which is not fitted within the template defined will get automatic size based on its height and it's already existing size of columns defined by the template. <br><img src="assets/css-images/22.png" alt=""></li>
+                </ul>
+                <li><strong>grid-auto-rows & grid-auto-columns</strong> to define rows and columns that doesn't fit within grid template.</li>
+                <li><strong>Chrome developer tools for Grid</strong></li>
+                <ul>
+                    <li>Little chip as grid <br><img src="assets/css-images/23.png" alt=""></li>
+                    <li><strong>Grid Layout</strong> <br><img src="assets/css-images/24.png" alt=""></li>
+                </ul>
+            </ol>
+
+        </div>
+        <hr>
+
+        <div class="Exercise-2">
+            <h1>Exercise 2</h1>
+            <embed src="https://appbrewery.github.io/grid-sizing/test.html" type="">
+        </div>
+        <hr>
+    
+        <div class="heading">Grid Placement</div>
+        <div class="grid-placement">
+            <div class="titles">
+                <h1>Introduction</h1>
+                <h2></h2>
+            </div>
+            <ol>
+                <li>Layout items in the grid and place them in the areas that we want.</li>
+                <li>Great layout to use CSS grid. <br> <img src="assets/css-images/25.png" alt=""></li>
+                <li><strong>Terms often used in CSS Grid</strong></li>
+                <ul>
+                    <li><strong>Container : </strong>div called Grid container that contains all of the items.</li>
+                    <li><strong>Items inside grid : </strong>divs called as grid items</li>
+                    <li><strong>Rows and Columns : </strong>We create and size our grid through rows and columns which are collectively knowns as <strong>Tracks</strong>.</li>
+                    <ul>
+                        <li><strong>Row Tracks : </strong>Created and sized by grid-template-rows.</li>
+                        <li><strong>Column Tracks : </strong>Created and sized by grid-template-columns.</li>
+                    </ul>
+                    <li><strong>Grid Cell : </strong> Within the intersection of tracks, we create small units which are called a grid cell. <br><img src="assets/css-images/26.png" alt=""></li>
+                    <ul>
+                        <li><strong>Grid cell </strong> is the smallest unit in a grid and they can be different sizes.</li>
+                        <li>Multiple cells can be us ed to create grid items.</li>
+                        <li>Here, grid item is positioned across two of our grid cells.Two items are positioned vertically and one item is positioned horizontally. <br><img src="assets/css-images/25.png" alt=""></li>
+                    </ul>
+                    <li><strong>Grid Lines : </strong>Horizontal and vertical  lines that separate tracks.</li>
+                    <ul>
+                        <li>Grid lines are controlled by using gap property to specify it's height and width.</li>
+                        <li>But we can't change its color.</li>
+                    </ul>
+                </ul>
+                <li>With all of things combined together in a grid, we've got our lines,tracks,cells,container and items.</li>
+                <ul>
+                    <li>These all things combined together that allows us to create these layouts using our grid.</li>
+                </ul>
+            </ol>
+        </div>    
+        <hr>
+
+        <div class="grid-placement">
+            <div class="titles">
+                <h1>Create Grid Layout</h1>
+                <h2></h2>
+            </div>
+            <ol>
+                <li><strong>Grid Container with 3 Items</strong> <br><img src="assets/css-images/27.png" alt=""></li>
+                <li><br><img src="assets/css-images/28.png" alt=""></li>
+                <li>By default a div is going to span the entire width of the window and occupy as much vertical space as there is content.</li>
+                <li>Items get placed in by default.</li>
+                <ul>
+                    <li>It will start from the first and it will go into each of the cells that are <br><img src="assets/css-images/29.png" alt=""></available></li>
+                </ul>
+            </ol>
+        </div>    
+        <hr>
+
+        <div class="grid-placement">
+            <div class="titles">
+                <h1>Grid Layout Properties</h1>
+                <h2></h2>
+            </div>
+            <ol>
+                <li><strong>grid-column</strong></li>
+                <ul>
+                    <li>Bridges multiple columns <br><img src="assets/css-images/30.png" alt=""></li>
+                </ul>
+                <li><strong>grid-column-start</strong></li>
+                <ul>
+                    <li>Where the item should start in the grid column.</li>
+                </ul>
+                <li><strong>grid-column-end</strong></li>
+                <ul>
+                    <li>Where the item should end in the grid column.</li>
+                    <img src="assets/css-images/32.png" alt="">
+                </ul>
+                <li><strong>Negative value : </strong>Specify right-handmost line last line in a grid is to use negative values.</li>
+                <li><strong>Positive value : </strong>Specify leftmost line in the grid.</li>
+                <li>You can start and end in any direction you want.</li>
+                <li><strong>Automatically initial position of the div before any positioning</strong> <br> <img src="assets/css-images/33.png" alt=""></li>
+                <li><strong>span value</strong></li>
+                <li><strong>grid-row : </strong></li>
+                <li><strong>grid-row-start : </strong></li>
+                <li><strong>grid-row-end : </strong></li>
+                <li><strong>order : </strong>Each of the grid items inside a grid container by default have an order of 0.</li>
+                <ul>
+                    <li>Higher order item get placed to rightmost or bottom most in the grid.</li>
+                    <li>Direction of order of items goes from left to right and then top to bottom.</li>
+                </ul>
+                <li><strong>grid-area</strong><br><img src="assets/css-images/34.png" alt=""></li>
+                <ul>
+                    <li>We have to add four values separated by forward slashes.</li>
+                    <li>This creates 4 coordinate layout.</li>
+                    <li>Shorthand property for :</li>
+                    <ul>
+                        <li>grid-column-start</li>
+                        <li>grid-column-end</li>
+                        <li>grid-row-start</li>
+                        <li>grid-row-end</li>
+                    </ul>
+                    <li>If we want to you grid-area for one particular item then we have to use grid-area for all other items to make rest of the layout to behave as expected.</li>
+                </ul>
+            </ol>
+        </div>    
+        <hr>
+
+        <div class="grid-placement">
+            <div class="titles">
+                <h1>Difference between grid and flexbox</h1>
+                <h2></h2>
+            </div>
+            <ol>
+                <li>Grid let us overlay items onto other items.<br><img src="assets/css-images/35.png" alt=""><br><img src="assets/css-images/36.png" alt=""></li>
+            </ol>
+        </div>    
+        <hr>
+
+        <div class="Exercise-3">
+            <div class="titles">
+                <h1>Exercise 3</h1>
+                <h2></h2>
+            </div>
+            <ol>
+                <li>TODO-1 <br><embed src="assets\css-exercises\exercise3\exercise1.html" type=""></li>
+                <li>TODO-2 <br><embed src="assets/css-exercises/exercise3/exercise2.html" type=""></li>
+                <li>TODO-3 <br><embed src="assets/css-exercises/exercise3/exercise3.html" type=""></li>
+
+            </ol>
+        </div>    
+        <hr>
+
+        <div class="grid-placement grid-game">
+            <div class="titles">
+                <h1>Exercise 4 : CSS Grid Game</h1>
+                <h2></h2>
+            </div>
+            <embed src="https://cssgridgarden.com/" type="">
+        </div>    
+        <hr>
+    
+        <div class="heading">Project : Mondrian Painting</div>
+        <div class="project">
+            <div class="titles">
+                <h1></h1>
+                <h2></h2>
+            </div>
+        <hr>
+    
+
+
+        </div>
+        
+    </div>
+
     
 </body>
 </html>
